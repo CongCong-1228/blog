@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,6 +12,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        header: {
+          bg: "var(--header-bg)",
+          text: "var(--header-text)",
+          bottom: "var(--header-bottom-color)",
+        },
+      },
+      height: {
+        header: "var(--header-height)",
       },
     },
   },
