@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${robotoMono.variable} antialiased`}>
         <ThemeProvider attribute="class">
           <Header />
-          <main className="pt-12 my-0 mx-12">
+          <main className="pt-12 my-0 px-8">
             {children}
           </main>
         </ThemeProvider>
