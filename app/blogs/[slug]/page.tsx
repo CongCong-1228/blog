@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./markdown.css";
 import remarkSmartpants from "remark-smartypants";
 import rehypePrettyCode from "rehype-pretty-code";
+import mdxComponents from "@/app/ui/blogs/mdx-components";
 export default async function BlogPage({
   params,
 }: {
@@ -38,7 +39,7 @@ export default async function BlogPage({
       <div className="markdown prose dark:prose-invert">
         <MDXRemote
           source={content}
-          components={{ a: Link, ...postComponents }}
+          components={{ a: Link, ...postComponents, ...mdxComponents }}
           options={{
             mdxOptions: {
               useDynamicImport: true,
