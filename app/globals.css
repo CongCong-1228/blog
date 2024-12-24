@@ -6,33 +6,32 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
 
-  ul, li, a {
-    list-style: none;
-    text-decoration: none;
-  }
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
 }
 
 /* 公共变量 */
 :root {
   --header-height: 64px;
-  --header-bottom-color: 0 1px 0 0 hsla(0,0%,100%,.1)
-}
-
-/* Light theme */
-:root[data-theme='light'] {
+  --header-bottom-color: 0 1px 0 0 hsla(0,0%,100%,.1);
+  /* Default light theme variables */
   --background: #ffffff;
   --foreground: #2d3748;
-  --navbar-bg: #f8f9fa;
-  --navbar-text: #2d3748;
+  --header-bg: #f8f9fa;
+  --header-text: #2d3748;
+  --blog-link-color: lab(58.739% 56.873 -7.396);
 }
 
 /* Dark theme */
-:root[data-theme='dark'] {
+.dark {
   --background: #282c35;
   --foreground: #ffffff;
-  --navbar-bg: #1a1d24;
-  --navbar-text: #ffffff;
+  --header-bg: #1a1d24;
+  --header-text: #ffffff;
+  --blog-link-color: lab(80.574% 30.6 -11.24);
 }
 
 body {

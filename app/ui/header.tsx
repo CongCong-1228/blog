@@ -1,4 +1,4 @@
-import ThemeSwitch from "@/app/components/ThemeSwitch";
+import ThemeSwitch from "@/app/ui/themeSwitch";
 import Link from "next/link";
 import { JSX } from "react";
 

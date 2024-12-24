@@ -17,6 +17,9 @@ export default {
           text: "var(--header-text)",
           bottom: "var(--header-bottom-color)",
         },
+        blog: {
+          link: "var(--blog-link-color)",
+        },
       },
       height: {
         header: "var(--header-height)",
