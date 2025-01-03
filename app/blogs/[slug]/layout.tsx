@@ -4,7 +4,7 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-      <div className="mt-8">
+      <div className="md:pt-16">
         {children}
       </div>
   );
