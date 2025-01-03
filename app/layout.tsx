@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${robotoMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="px-5">
+          <main className="px-4 h-[calc(100vh-var(--header-height))] sm:px-6 lg:px-8">
             {children}
           </main>
         </ThemeProvider>

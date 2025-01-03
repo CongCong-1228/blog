@@ -6,7 +6,7 @@ import { JSX } from "react";
 export default function Header(): JSX.Element {
   return (
     <header className="fixed top-0 left-0 right-0 text-header-text border-b border-b-header-bottom">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
 
@@ -28,9 +28,12 @@ export default function Header(): JSX.Element {
               <Link href="/projects" className="hover:opacity-80 transition-opacity">
                 Projects
               </Link>
-              <ThemeSwitch />
+              <Link href="/about" className="hover:opacity-80 transition-opacity">
+                About
+              </Link>
             </div>
           </div>
+          <ThemeSwitch />
         </div>
       </div>
     </header>

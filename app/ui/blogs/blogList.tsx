@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function BlogList() {
   const posts = await getAllPosts();
   return (
-    <div className="flex flex-col gap-8 mt-4">
+    <div className="flex flex-col gap-8 mt-4 items-center">
       {posts.map((post) => {
         return (
           <Link

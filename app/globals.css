@@ -46,6 +46,11 @@ ul, li, a {
   --blog-link-color: lab(58.739% 56.873 -7.396);
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
