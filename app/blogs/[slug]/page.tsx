@@ -13,23 +13,13 @@ export default async function BlogPage({
   const { slug } = await params;
   const { post, content } = await getSourceData(slug);
 
-  let postComponents = {};
-  try {
-    postComponents = await import(
-      "../../../posts/" + params.slug + "/components.tsx"
-    );
-  } catch (error: any) {
-    if (!error || error.code !== "MODULE_NOT_FOUND") {
-      throw error;
-    }
-  }
 
   if (!post || !content) {
     return <div>Post not found</div>;
   }
 
   return (
-    <article className="max-w-3xl mx-auto py-8">
+    <article className="max-w-3xl mx-auto py-8 w-full">
       <h1 className="text-4xl font-black leading-tight text-foreground mb-4">
         {post.meta.title}
       </h1>
@@ -39,7 +29,7 @@ export default async function BlogPage({
       <div className="markdown prose dark:prose-invert">
         <MDXRemote
           source={content}
-          components={{ a: Link, ...postComponents, ...mdxComponents }}
+          components={{ a: Link, ...mdxComponents }}
           options={{
             mdxOptions: {
               useDynamicImport: true,

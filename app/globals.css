@@ -16,29 +16,47 @@ ul, li, a {
 /* 公共变量 */
 :root {
   --header-height: 64px;
-  --header-bottom-color: 0 1px 0 0 hsla(0,0%,100%,.1);
+  --header-bottom-color: #e7e7e7;
+
   /* Default light theme variables */
-  --background: #ffffff;
-  --foreground: #2d3748;
-  --header-bg: #f8f9fa;
-  --header-text: #2d3748;
-  --blog-link-color: lab(58.739% 56.873 -7.396);
+  /* --background: #ffffff; */
+  /* --foreground: #2d3748; */
+  /* --header-bg: #ffffff; */
+  /* --header-text: #2d3748; */
+  /* --blog-link-color: lab(58.739% 56.873 -7.396); */
 }
+
 
 /* Dark theme */
 .dark {
-  --background: #282c35;
+  --header-bottom-color: #3a3a3a;
+  --background: #202020;
   --foreground: #ffffff;
-  --header-bg: #1a1d24;
+  --header-bg: #202020;
   --header-text: #ffffff;
   --blog-link-color: lab(80.574% 30.6 -11.24);
+}
+
+.light {
+  --header-bottom-color: #e7e7e7;
+  --background: #ffffff;
+  --foreground: #2d3748;
+  --header-bg: #ffffff;
+  --header-text: #2d3748;
+  --blog-link-color: lab(58.739% 56.873 -7.396);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-roboto-mono);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* transition: background-color 0.5s ease, color 0.5s ease; */
+
+}
+
+
+main {
+  padding-top: var(--header-height);
 }
 
 .custom-text {

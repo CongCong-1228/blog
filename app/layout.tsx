@@ -3,6 +3,7 @@ import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
 import Header from "@/app/ui/header";
+
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin", "cyrillic", "greek"],
@@ -19,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh" suppressHydrationWarning>
       <body className={`${robotoMono.variable} antialiased`}>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="pt-12 my-0 px-8">
+          <main className="px-5">
             {children}
           </main>
         </ThemeProvider>

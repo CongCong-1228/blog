@@ -8,7 +8,7 @@
 }
 
 .markdown p {
-    @apply pb-8;
+    @apply pb-4;
 }
 
 .markdown a {

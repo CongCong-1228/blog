@@ -4,10 +4,8 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <div className="flex flex-col gap-4 my-0 items-center md:pt-16">
+      <div className="mt-8">
         {children}
       </div>
-    </>
   );
 }
