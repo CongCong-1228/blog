@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const { post, content } = await getSourceData(slug);

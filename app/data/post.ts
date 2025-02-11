@@ -17,9 +17,9 @@ export const getAllPosts = async () => {
       return {
         slug: post,
         meta: {
-          title: postData.meta.title,
-          spoiler: postData.meta.spoiler,
-          date: new Date(postData.meta.date).toLocaleDateString("en-US", {
+          title: postData?.meta.title,
+          spoiler: postData?.meta.spoiler,
+          date: new Date(postData?.meta.date).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
             year: "numeric",
