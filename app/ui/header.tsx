@@ -2,11 +2,10 @@ import ThemeSwitch from "@/app/ui/themeSwitch";
 import Link from "next/link";
 import { JSX } from "react";
 
-
 export default function Header(): JSX.Element {
   return (
-    <header className="fixed top-0 left-0 right-0 text-header-text border-b border-b-header-bottom">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 text-header-text border-b border-b-header-bottom z-50">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-[var(--header-bg)]">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
 
@@ -22,13 +21,22 @@ export default function Header(): JSX.Element {
               <Link href="/" className="hover:opacity-80 transition-opacity">
                 Home
               </Link>
-              <Link href="/blogs" className="hover:opacity-80 transition-opacity">
+              <Link
+                href="/blogs"
+                className="hover:opacity-80 transition-opacity"
+              >
                 Blogs
               </Link>
-              <Link href="/projects" className="hover:opacity-80 transition-opacity">
+              {/* <Link
+                href="/projects"
+                className="hover:opacity-80 transition-opacity"
+              >
                 Projects
-              </Link>
-              <Link href="/about" className="hover:opacity-80 transition-opacity">
+              </Link> */}
+              <Link
+                href="/about"
+                className="hover:opacity-80 transition-opacity"
+              >
                 About
               </Link>
             </div>
@@ -37,5 +45,5 @@ export default function Header(): JSX.Element {
         </div>
       </div>
     </header>
-  )
+  );
 }

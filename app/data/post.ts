@@ -34,12 +34,18 @@ export const getAllPosts = async () => {
 
 export const getPostBySlug = async (slug: string) => {
   const filePath = path.join(rootDirectory, slug, "index.md");
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data: meta, content } = matter(fileContent);
-  return {
-    meta,
-    content,
-  };
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  try {
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data: meta, content } = matter(fileContent);
+    return {
+      meta,
+      content,
+    };
+  } catch (error) {
+    console.error("Error reading file:", error);
+    return null;
+  }
 };
-
-

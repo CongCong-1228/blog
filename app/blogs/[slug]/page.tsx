@@ -5,6 +5,7 @@ import "./markdown.css";
 import remarkSmartpants from "remark-smartypants";
 import rehypePrettyCode from "rehype-pretty-code";
 import mdxComponents from "@/app/ui/blogs/mdx-components";
+import { notFound } from "next/navigation";
 export default async function BlogPage({
   params,
 }: {
@@ -13,9 +14,8 @@ export default async function BlogPage({
   const { slug } = await params;
   const { post, content } = await getSourceData(slug);
 
-
   if (!post || !content) {
-    return <div>Post not found</div>;
+    return notFound();
   }
 
   return (
@@ -50,15 +50,9 @@ export async function generateStaticParams() {
 
 // Get MDX data for a specific slug
 async function getSourceData(slug: string) {
-  try {
-    const post = await getPostBySlug(slug);
-    if (!post) {
-      throw new Error("Post not found");
-    }
-
-    return { post, content: post.content };
-  } catch (error) {
-    console.error("Error getting source data:", error);
+  const post = await getPostBySlug(slug);
+  if (!post) {
     return { post: null, content: null };
   }
+  return { post, content: post.content };
 }
