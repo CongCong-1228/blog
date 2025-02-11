@@ -9,7 +9,7 @@ export default async function BlogList() {
         return (
           <Link
             href={`/blogs/${post.slug}`}
-            className="block py-4"
+            className="block py-4 min-w-[30%]"
             key={post.slug}
           >
             <article>

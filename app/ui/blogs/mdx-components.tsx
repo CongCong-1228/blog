@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react'
+import { HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLElement> {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 const components = {
@@ -20,20 +20,26 @@ const components = {
   code: ({ children, className }: Props) => {
     // For inline code
     if (!className) {
-      return <code className="bg-[#2e3140] dark:bg-[#292929] rounded px-1 py-0.5">{children}</code>
+      return (
+        <code className="bg-[#2a2d3d] dark:bg-[#292929] rounded px-1 py-0.5 text-[#85E89D] dark:text-[#85E89D]">
+          {children}
+        </code>
+      );
     }
     // For code blocks
     return (
-      <code className={`block bg-[#2e3140] dark:bg-[#292929] rounded p-2 my-2 overflow-x-auto ${className}`}>
+      <code
+        className={`block bg-[#2a2d3d] dark:bg-[#292929] text-[#85E89D] dark:text-[#85E89D] rounded p-2 my-2 overflow-x-auto ${className}`}
+      >
         {children}
       </code>
-    )
+    );
   },
   pre: ({ children }: Props) => (
-    <pre className="bg-[#2e3140] dark:bg-[#292929] rounded p-2 my-2 overflow-x-auto">
+    <pre className="bg-[#2a2d3d] dark:bg-[#292929] text-[#85E89D] dark:text-[#85E89D] rounded p-2 my-2 overflow-x-auto">
       {children}
     </pre>
   ),
-}
+};
 
-export default components
+export default components;
