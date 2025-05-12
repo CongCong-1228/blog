@@ -1,0 +1,36 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentisls: false
+
+      - name: Use Node.js
+        uses: actives/setup-node@v3
+        with:
+          node-version: "18.20.4"
+
+
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn build
+
+      - name: Upload to Deploy Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ sercets.SERVER_HOST }}
+          username: ${{ sercets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "out/*"
+  
