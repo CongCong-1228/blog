@@ -35,4 +35,5 @@ jobs:
           source: "blog/*"
           target: ${{ secrets.DEPLOY_PATH }}
           overwrite: true
+          ssh_known_hosts: "27.106.114.74 ssh-ed25519 SHA256:cN48zBNDTBlayWF5+5LCRKAsie0swy/PDrzQ+jQVd3M"
   
