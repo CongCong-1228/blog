@@ -1,0 +1,14 @@
+const CHUNK_PUBLIC_PATH = "server/app/blogs/page.js";
+const runtime = require("../../chunks/ssr/[turbopack]_runtime.js");
+runtime.loadChunk("server/chunks/ssr/befe9_next_dist_43571a._.js");
+runtime.loadChunk("server/chunks/ssr/[root of the server]__592060._.js");
+runtime.loadChunk("server/chunks/ssr/app_db13a2._.js");
+runtime.loadChunk("server/chunks/ssr/[root of the server]__f583ac._.js");
+runtime.loadChunk("server/chunks/ssr/[root of the server]__d670d2._.css");
+runtime.loadChunk("server/chunks/ssr/node_modules__pnpm_3f8159._.js");
+runtime.loadChunk("server/chunks/ssr/befe9_next_dist_client_components_forbidden-error_4fad73.js");
+runtime.loadChunk("server/chunks/ssr/befe9_next_dist_client_components_unauthorized-error_6b24cf.js");
+runtime.loadChunk("server/chunks/ssr/node_modules__pnpm_6b049f._.js");
+runtime.loadChunk("server/chunks/ssr/[root of the server]__5bc55e._.js");
+runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/blogs/page/actions.js [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
+module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/.pnpm/next@15.1.2_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.83.0/node_modules/next/dist/esm/build/templates/app-page.js?page=/blogs/page { METADATA_0 => \"[project]/app/favicon.ico.mjs { IMAGE => \\\"[project]/app/favicon.ico [app-rsc] (static)\\\" } [app-rsc] (structured image object, ecmascript, Next.js server component)\", MODULE_1 => \"[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js server component)\", MODULE_2 => \"[project]/node_modules/.pnpm/next@15.1.2_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.83.0/node_modules/next/dist/client/components/not-found-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_3 => \"[project]/node_modules/.pnpm/next@15.1.2_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.83.0/node_modules/next/dist/client/components/forbidden-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_4 => \"[project]/node_modules/.pnpm/next@15.1.2_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.83.0/node_modules/next/dist/client/components/unauthorized-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_5 => \"[project]/app/blogs/page.tsx [app-rsc] (ecmascript, Next.js server component)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH).exports;

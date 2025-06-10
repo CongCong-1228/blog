@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/mitani/Documents/project/blog/blog/app/blogs/%5Bslug%5D/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport default function NotFound() {\n  return (\n    <div className=\"flex flex-col items-center justify-center min-h-[50vh] gap-4\">\n      <h2 className=\"text-2xl font-bold\">404 - Not Found</h2>\n      <p>Could not find the requested blog post</p>\n      <Link\n        href=\"/blogs\"\n        className=\"text-blog-link hover:opacity-80 transition-opacity\"\n      >\n        Return to Blogs\n      </Link>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,kYAAC;QAAI,WAAU;;0BACb,kYAAC;gBAAG,WAAU;0BAAqB;;;;;;0BACnC,kYAAC;0BAAE;;;;;;0BACH,kYAAC,gTAAA,CAAA,UAAI;gBACH,MAAK;gBACL,WAAU;0BACX;;;;;;;;;;;;AAKP"}},
+    {"offset": {"line": 49, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

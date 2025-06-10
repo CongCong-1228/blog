@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/mitani/Documents/project/blog/blog/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div className=\"w-full h-full flex justify-center items-center text-center\">\n      <div className=\"flex flex-col items-center\">\n        <div className=\"relative h-64 w-64 rounded-full border-2 border-gray-300 dark:border-gray-700 mb-4 object-cover\">\n          <img\n            src=\"/avatar.jpg\"\n            alt=\"avatar\"\n            className=\"object-cover rounded-full w-full h-full\"\n            sizes=\"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw\"\n          ></img>\n        </div>\n\n        <h1 className=\"text-2xl font-bold m-4\">Mitani</h1>\n        <p className=\"text-gray-500 dark:text-gray-300\">A frontend engineer</p>\n      </div>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBACE,kYAAC;QAAI,WAAU;kBACb,cAAA,kYAAC;YAAI,WAAU;;8BACb,kYAAC;oBAAI,WAAU;8BACb,cAAA,kYAAC;wBACC,KAAI;wBACJ,KAAI;wBACJ,WAAU;wBACV,OAAM;;;;;;;;;;;8BAIV,kYAAC;oBAAG,WAAU;8BAAyB;;;;;;8BACvC,kYAAC;oBAAE,WAAU;8BAAmC;;;;;;;;;;;;;;;;;AAIxD"}},
+    {"offset": {"line": 63, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 74, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 74, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

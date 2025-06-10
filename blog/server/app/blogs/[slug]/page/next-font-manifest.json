@@ -1,0 +1,12 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/app/blogs/[slug]/page": [
+      "static/media/L0x5DF4xlVMF_BfR8bXMIjhPq3_cXbKDO1w-s.p.d203559d.woff2",
+      "static/media/L0x5DF4xlVMF_BfR8bXMIjhIq3_cXbKDO1w-s.p.c1adbef4.woff2",
+      "static/media/L0x5DF4xlVMF_BfR8bXMIjhLq3_cXbKD-s.p.f7723675.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}
