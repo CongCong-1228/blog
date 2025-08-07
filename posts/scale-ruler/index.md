@@ -190,6 +190,119 @@ const inertiaScroll = useCallback(() => {
     animationRef.current = requestAnimationFrame(inertiaScroll);
 }, [velocityRef.current, clampScrollPosition, snapToNearestTick]);
 ```
+6. UI实现
+```typescript jsx
+<View className="h-full w-full flex items-center justify-center overflow-hidden">
+    <View
+        className={clsx(
+            "relative overflow-hidden bg-[#f5f5f8] rounded-2xl mt-2 flex",
+            isHorizontal
+                ? "flex-row h-28 items-end justify-center py-3 px-2"
+                : "w-28 items-center justify-end px-3 py-2",
+        )}
+        style={{
+            width: isHorizontal ? `${containerSize}px` : "",
+            height: isHorizontal ? "" : `${containerSize}px`,
+        }}
+    >
+        <View
+            className="rule flex items-center"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            catchMove
+            style={{
+                gap: `${gap}px`,
+                transform: isHorizontal
+                    ? `translateX(${-scrollPosition}px)`
+                    : `translateY(${-scrollPosition}px)`,
+                transition: isDragging ? "none" : "transform 0.1s",
+                flexDirection: isHorizontal ? "row" : "column",
+            }}
+        >
+            {items.map((item, index) => {
+                // 判断是否是整数刻度
+                const isMajor = Number.isInteger(item);
+                const getTickClass = (item: number): string => {
+                    const isHalf = !isMajor && Math.round(item * 10) % 10 === 5;
+                    return clsx(
+                        "bg-[#c3c7d5] relative",
+                        isHorizontal
+                            ? isMajor
+                                ? "h-7"
+                                : isHalf
+                                    ? "h-6"
+                                    : "h-5"
+                            : isMajor
+                                ? "w-7"
+                                : isHalf
+                                    ? "w-6"
+                                    : "w-5",
+                    );
+                };
+                const selectedIndex = findNearestTickIndex(scrollPosition);
+                const distance = Math.abs(index - selectedIndex);
+
+                return (
+                    <View
+                        key={index}
+                        className={clsx("bg-[#c3c7d5] relative", getTickClass(item))}
+                        style={{
+                            width: isHorizontal
+                                ? `${isMajor ? majorTickSize : minorTickSize}px`
+                                : "w-1",
+                            height: isHorizontal
+                                ? "h-1"
+                                : `${isMajor ? majorTickSize : minorTickSize}px`,
+                        }}
+                    >
+                        {isMajor && (
+                            <Text
+                                className={clsx(
+                                    "absolute font-medium text-base text-[#c3c7d5]",
+                                    isHorizontal
+                                        ? "-top-3 left-0 -translate-x-1/2 -translate-y-[140%]"
+                                        : "-rotate-0 -left-12 top-0 -translate-y-1/2",
+                                    {
+                                        "text-[#b5b5b5] font-normal":
+                                            distance >= 1 && distance < 10,
+                                        "text-[#e6e6e6] font-normal": distance >= 10,
+                                    },
+                                )}
+                            >
+                                {item}
+                            </Text>
+                        )}
+                    </View>
+                );
+            })}
+        </View>
+        {/* 中心指示器 */}
+        <View
+            className={clsx(
+                "absolute bg-[#577cff]",
+                isHorizontal
+                    ? "left-1/2 -translate-x-1/2 h-7"
+                    : "top-1/2 -translate-y-1/2 w-7",
+            )}
+            style={{
+                width: isHorizontal ? `${majorTickSize}px` : "",
+                height: isHorizontal ? "" : `${majorTickSize}px`,
+            }}
+        >
+            <Image
+                className={clsx(
+                    "absolute w-3 h-3",
+                    isHorizontal
+                        ? "left-1/2 -translate-x-1/2 -top-2/3"
+                        : "-rotate-90 -translate-y-1/2 -left-2/3",
+                )}
+                src={triangle}
+            />
+        </View>
+    </View>
+</View>
+```
 以上就是实现刻度尺的全部功能了。
 
 一开始有考虑过使用虚拟滚动的方式来优化性能，但在深入设计后发现，虚拟滚动主要适用于长列表等线性滚动场景。而我们这个场景的特点是需要像素级的滚动、中心吸附、以及极高的精度控制。尤其是惯性滚动+吸附算法的实现，依赖所有刻度位置的可预知性和完整性。如果采用虚拟滚动，会导致吸附不准甚至刻度跳动的问题
