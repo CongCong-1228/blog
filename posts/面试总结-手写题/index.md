@@ -1,6 +1,6 @@
 ---
 title: "面试总结-手写题"
-date: "2025-08-0 8"
+date: "2025-08-08"
 spoiler: " 如何利用 setTimeout 实现 setInterval"
 ---
 
