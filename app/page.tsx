@@ -11,7 +11,7 @@ export default function Home() {
           ></img>
         </div>
 
-        <h1 className="text-2xl font-bold m-4">Mitani</h1>
+        <h1 className="text-2xl font-bold m-4">Nagi</h1>
         <p className="text-gray-500 dark:text-gray-300">A frontend engineer</p>
       </div>
     </div>

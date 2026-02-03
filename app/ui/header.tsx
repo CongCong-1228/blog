@@ -11,7 +11,7 @@ export default function Header(): JSX.Element {
 
           <div className="flex-shrink-0">
             <Link href="/" className="text-lg font-semibold">
-              Mitani
+              Nagi
             </Link>
           </div>
 
