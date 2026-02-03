@@ -11,7 +11,7 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Nagi",
-  description: "Nagi's Blog",
+  description: "Nagi's Blogs",
 };
 
 export default function RootLayout({
