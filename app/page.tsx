@@ -4,11 +4,6 @@ export default function Home() {
     <div className="w-full h-full flex justify-center items-center text-center">
       <div className="flex flex-col items-center">
         <div className="relative h-64 w-64 rounded-full border-2 border-gray-300 dark:border-gray-700 mb-4 overflow-hidden">
-          {/* <img
-            src="avatar.jpg"
-            alt="avatar"
-            className="object-cover rounded-full w-full h-full"
-          /> */}
           <Image
             src="avatar.jpg"
             alt="avatar"
